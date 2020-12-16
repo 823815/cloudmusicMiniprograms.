@@ -1,0 +1,17 @@
+<view class="playSongContainer">
+  <view class="author">{{song.ar[0].name}}</view>
+  <view class="circle"></view>
+  <image class="needle {{isPlay? 'needleRotate':''}}" src="/static/images/song/needle.png"></image>
+  <view class="cipan {{isPlay? 'cipanAnimation':''}}" bindtap="handlePlay">
+     <image class="disc" src="/static/images/song/disc.png"></image>
+     <image class="songPicture" src="{{song.al.picUrl}}"></image>
+  </view>
+  <!-- 底部控制 -->
+  <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+    <text class="iconfont icon-shangyishou" bindtap="handleSwitch" id="last"></text>
+    <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="handlePlay"></text>
+    <text class="iconfont icon-next" bindtap="handleSwitch" id="next"></text>
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+  </view>
+</view>

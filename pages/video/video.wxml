@@ -1,0 +1,41 @@
+<view class="videoContainer">
+<!-- 头部区域 -->
+  <view class="header">
+    <image src="/static/images/video/video.jpg"></image>
+    <view class="search">搜索</view>
+    <image src="/static/images/logo.png "></image>
+  </view>
+
+<!-- 导航区域 -->
+  <scroll-view enable-flex scroll-x scroll-into-view="{{'ID'+selectItemId}}" scroll-with-animation class="navScroll">
+    <view class="nav-item" id="{{'ID'+item.id}}" wx:for="{{videoGroupList}}" wx:key="id">
+      <view class="navContainer {{item.id===selectItemId? 'active':''}}" bindtap="handleHasClass" id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+<!-- 视频列表区域 -->
+  <scroll-view bindscrolltolower="handleToLower" refresher-triggered="{{isRefresh}}" refresher-enabled bindrefresherrefresh="handleRefresh" scroll-y class="videoScroll">
+    <view class="videoItem" wx:for='{{videoGroup}}' wx:key='index'>
+      <video autoplay class="videoAndImage" objectFit="fill" controls poster="{{item.data.coverUrl}}" id="{{item.data.vid}}" bindplay="handlePlay" bindended="handlend" bindtimeupdate="handleTime" src="{{item.data.urlInfo.url}}" wx:if="{{oldId===item.data.vid}}"></video>
+      <image class="videoAndImage" bindtap="handlePlay" id="{{item.data.vid}}" src="{{item.data.coverUrl}}" wx:else></image>
+
+      <view class="content">{{item.data.title}}</view>
+      <view class="footer">
+        <image class="videoAuthor" src="{{item.data.creator.avatarUrl}}"></image>
+        <text class="authorName">{{item.data.creator.nickname}}</text>
+        <view class="praised">
+          <text style="{{item.data.praised? 'color: red':''}}" class="iconfont icon-iconzhengli_dianzan"></text>
+          <text class="count"  style="{{item.data.praised? 'color: red':''}}">{{item.data.praisedCount}}</text>
+        </view>
+        <view class="comment">
+          <text class="iconfont icon-pinglun"></text>
+          <text class="count">{{item.data.commentCount}}</text>
+        </view>
+        <button open-type="share" style="width: 16rpx;height: 64rpx;" class="item btn">
+          <text class="iconfont icon-gengduo"></text>
+        </button>
+      </view>
+    </view>
+  </scroll-view>
+</view>
