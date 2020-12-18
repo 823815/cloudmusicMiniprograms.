@@ -39,14 +39,20 @@ Page({
     // 订阅来自playSong页面的消息
     pubSub.subscribe('switchType', (msg, data) => {
       let { recommendSongList, index} = this.data
-      if (data === last) {
+      // console.log(data)
+      if (data === 'last') {
+        (index === 0) && (index = recommendSongList.length)
         index -= 1
-        if (index < 0) index = 0
       }else {
+       ( index === recommendSongList.length - 1) && (index = -1)
         index += 1
-        if (index > recommendSongList.length) index = recommendSongList.length
+        // console.log(recommendSongList.length,'1111')
       }
+      this.setData({
+        index
+      })
       let musicId = recommendSongList[index].id
+      pubSub.publish('musicId',musicId)
     })
   },
 
