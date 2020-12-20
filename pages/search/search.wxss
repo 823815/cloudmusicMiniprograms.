@@ -1,0 +1,123 @@
+.searchContainer {
+  padding: 0 20rpx;
+}
+.header {
+  display: flex;
+  position: relative;
+  padding: 10rpx;
+}
+.searchinput {
+  position: relative;
+  flex: 1;
+  background: rgba(237, 237, 237, 0.3);
+  border-radius: 30rpx;
+  padding-left: 46rpx;
+}
+.searchicon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 40rpx;
+}
+.cancle {
+  width: 100rpx;
+  text-align: center;
+}
+
+/* 热搜榜 */
+.hotContainer .title {
+  font-size: 28rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  border-bottom: 1rpx solid #eee
+}
+.hotList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotItem {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.hotItem .order {
+  display: inline-block;
+  width: 10rpx;
+  font-size: 28rpx;
+  margin: 0 10rpx;
+}
+.hotItem text {
+  margin-left: 15px;
+}
+.hotList .hotItem:nth-child(1) .order {
+  color: red;
+}
+.hotList .hotItem:nth-child(2) .order {
+  color: red;
+}
+.hotList .hotItem:nth-child(3) .order {
+  color: red;
+}
+.hotItem image{
+  width: 35rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+/* 搜索内容展示 */
+.searchContent {
+  color: rgba(107, 100, 238, 0.96);
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid rgba(107, 100, 238, 0.96);
+  z-index: 999;
+}
+.searchItem {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.searchItem .content {
+  flex: 1;
+  margin-left: 20rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 26rpx;
+}
+.showSearchContent {
+  position: absolute;
+  background: #fff;
+  width: 89%;
+  padding: 0 20rpx;
+  /* border: 1rpx solid red; */
+  box-shadow:2px 2px 10px #909090
+}
+/* 历史纪录 */
+.history {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
+}
+.history .title{
+  font-size: 28rpx;
+  margin: 10rpx 20rpx 0 0;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.history .historyItem {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  margin: 10rpx 10rpx;
+  background: #f5f5f5;
+  /* background: black; */
+  border-radius: 60rpx;
+}
+.history .delete {
+  position: absolute;
+  top: 10rpx;
+  right: 30rpx;
+  font-size: 40rpx;
+}
